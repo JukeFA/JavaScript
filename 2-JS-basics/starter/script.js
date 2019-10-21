@@ -223,7 +223,7 @@ switch (job) {
 
 // falsy values: undefined, null, 0,'', NaN
 // truthy values: NOT falsy values
-
+/* 
 var height;
 
 height = 23;
@@ -238,3 +238,21 @@ if (height || height === 0) {
 if (height == '23') {
     console.log('The == operator does type coercion')
 }
+ */
+
+/**********
+Coding Challenge 2
+*/
+
+var avgJohn = (114 + 120 + 103) / 3;
+var avgMike = (116 + 94 + 123) / 3;
+var avgMary = (97 + 134 + 105) / 3;
+
+if (avgJohn > avgMike && avgJohn > avgMary) {
+    console.log('John\'s team averages ' + avgJohn + ' points per game, which is more than Mike\'s and Mary\'s team');
+} else if (avgMike > avgJohn && avgMike > avgMary) {
+    console.log('Mike\'s team averages ' + avgMike + ' points per game, which is more than John\'s and Mary\'s team');
+} else {
+    console.log('Mary\'s team averages ' + avgMary + ' points per game, which is more than John\'s and Mike\'s team');
+}
+
