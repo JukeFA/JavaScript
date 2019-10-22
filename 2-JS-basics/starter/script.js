@@ -289,7 +289,7 @@ yearsUntilRetirement(1969, 'Jane');
 /**********
 Functions statements and expressions
 */
-
+/* 
 //Function declaration
 // function whatDoYouDo(job, firstName) {}
 
@@ -312,3 +312,58 @@ console.log(whatDoYouDo('teacher', 'John'));
 console.log(whatDoYouDo('designer', 'Jane'));
 console.log(whatDoYouDo('retired', 'Mark'));
 
+ */
+
+/**********
+Arrays
+*/
+
+/* 
+// Initialize new array
+var names = ['John', 'Mark', 'Jane'];
+var years = new Array(1990, 1969, 1948);
+
+console.log(names[2]);
+console.log(names.length);
+
+// Mutate array data
+
+names[1] = 'Ben';
+names[names.length] = 'Mary';
+console.log(names);
+
+// Different data types
+var john = ['John', 'Smith', 1990, 'teacher', false];
+
+john.push('blue');
+john.unshift('Mr.');
+console.log(john);
+
+john.pop();
+john.pop();
+john.shift();
+console.log(john);
+
+console.log(john.indexOf(23));
+
+var isDesigner = john.indexOf('designer') === -1 ? 'John is not a designer' : 'John is a designer';
+console.log(isDesigner);
+ */
+
+/**********
+Coding challenge 3
+*/
+
+var tipCalculator = function (bill) {
+    switch (bill) {
+        case bill < 50 :
+            return bill * .2;
+        case bill >=50 && bill <= 200 :
+            return bill * .15 ; 
+        case bill > 200 :
+            return bill * .1;
+    }
+}
+
+var bills = [124, 48, 268];
+var tips = [tipCalculator(bills[0]),tipCalculator(bills[1]),tipCalculator(bills[2])];
