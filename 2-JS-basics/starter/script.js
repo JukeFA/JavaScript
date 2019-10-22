@@ -243,7 +243,7 @@ if (height == '23') {
 /**********
 Coding Challenge 2
 */
-
+/* 
 var avgJohn = (114 + 120 + 103) / 3;
 var avgMike = (116 + 94 + 123) / 3;
 var avgMary = (97 + 134 + 105) / 3;
@@ -255,4 +255,33 @@ if (avgJohn > avgMike && avgJohn > avgMary) {
 } else {
     console.log('Mary\'s team averages ' + avgMary + ' points per game, which is more than John\'s and Mike\'s team');
 }
+ */
 
+/**********
+Functions
+*/
+/* 
+function calculateAge(birthYear) {
+    return 2018 - birthYear;
+}
+
+var ageJohn = calculateAge(1990);
+var ageMike = calculateAge(1948);
+var ageJane = calculateAge(1969);
+console.log(ageJohn, ageMike, ageJane);
+
+function yearsUntilRetirement(year, firstName) {
+    var age = calculateAge(year);
+    var retirement = 65 - age;
+
+    if (retirement > 0) {
+    console.log(firstName + ' retires in ' + retirement + ' years.');
+    } else {
+        console.log(firstName + ' is already retired');
+    }
+}
+
+yearsUntilRetirement(1990, 'John');
+yearsUntilRetirement(1948, 'Mike');
+yearsUntilRetirement(1969, 'Jane');
+ */
