@@ -87,6 +87,7 @@ console.log(typeof x);
 /**********
 * Basic Operators
 */
+
 /*
 var now = 2018;
 var yearJohn = 1989;
@@ -190,6 +191,7 @@ if (age < 13) {
 /**********
 The Ternary Operator and Switch Statements
 */
+
 /* 
 var firstName = 'John';
 var age = 16;
@@ -353,7 +355,7 @@ console.log(isDesigner);
 /**********
 Coding challenge 3
 */
-
+/* 
 var tipCalculator = function (bill) {
     switch (bill) {
         case bill < 50 :
@@ -367,3 +369,90 @@ var tipCalculator = function (bill) {
 
 var bills = [124, 48, 268];
 var tips = [tipCalculator(bills[0]),tipCalculator(bills[1]),tipCalculator(bills[2])];
+
+ */
+/**********
+Objects and Properties
+*/
+/* 
+
+var john = {
+    firstName: 'John',
+    lastName: 'Smith',
+    birthYear: 1990,
+    family: ['Jane', 'Mark', 'Bob', 'Emily'],
+    isMarried: false
+};
+
+console.log(john.firstName);
+console.log(john['lastName']);
+var x = 'birthYear';
+console.log(john[x]);
+
+john.job = 'designer';
+john['isMarried'] = true;
+console.log(john);
+
+var jane = new Object();
+jane.firstName = 'Jane';
+jane.birthYear = 1969;
+jane['lastName'] = 'Smith';
+console.log(jane);
+ */
+
+/**********
+Objects and methods
+*/
+
+/* 
+var john = {
+    firstName: 'John',
+    lastName: 'Smith',
+    birthYear: 1990,
+    family: ['Jane', 'Mark', 'Bob', 'Emily'],
+    isMarried: false,
+    calcAge: function() {
+        this.age = 2018 - this.birthYear;
+    }
+};
+
+john.calcAge();
+console.log(john);
+ */
+
+/**********
+Coding Challenge 4
+*/
+
+/* 
+var john = {
+    mass: 92,
+    height: 1.95,
+    calcBMI: function() {
+        this.bmi = this.mass / (this.height * this.height);
+    }
+};
+john.calcBMI();
+
+var mark = {
+    mass: 78,
+    height: 1.69,
+    calcBMI: function() {
+        this.bmi = this.mass / (this.height * this.height);
+    }
+};
+
+mark.calcBMI();
+
+if (mark.bmi > john.bmi) {
+    console.log('Mark\'s bmi of ' + mark.bmi + ' is higher than John\'s.');
+} else if (mark.bmi < john.bmi) {
+    console.log('John\'s bmi of ' + john.bmi + ' is higher than Mark\'s.');
+} else {
+    console.log('Their BMI\'s are the same.');
+}
+ */
+
+/**********
+Coding Challenge 4
+*/
