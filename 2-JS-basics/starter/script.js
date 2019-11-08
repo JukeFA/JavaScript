@@ -454,5 +454,66 @@ if (mark.bmi > john.bmi) {
  */
 
 /**********
-Coding Challenge 4
+Coding Challenge 4 !!Find this!!
 */
+
+/**********
+Loops and Iteration
+*/
+
+for (var i = 1; i < 20; i += 2){
+    console.log(i);
+} 
+
+// var john = ['John', 'Smith', 1990, 'teacher', false, 'blue'];
+/*
+//For loop
+for (var i = 0; i < john.length; i++) {
+    console.log(john[i]);
+}
+
+//While loop
+while (i < john.length) {
+    console.log(john[i]);
+    i++;
+}
+*/
+//continue and break statements
+
+var john = ['John', 'Smith', 1990, 'teacher', false, 'blue'];
+
+// sips the false options and moves to the next item
+for (var i = 0; i < john.length; i++) {
+    if (typeof john[i] !== 'string') continue;
+    console.log(john[i]);
+}
+
+// exits out of the string
+for (var i = 0; i < john.length; i++) {
+    if (typeof john[i] !== 'string') break;
+    console.log(john[i]);
+}
+
+// looping backwards
+for (var i = john.length - 1 ; i >= 0; i-- ) {
+    console.log(john[i]);
+}
+
+/**********
+coding challenge 5
+*/
+var bill = [ ];
+var tip = [ ];
+
+
+
+var tipCalculator = function (bill) {
+    switch (bill) {
+        case bill < 50 :
+            return bill * .2;
+        case bill >=50 && bill <= 200 :
+            return bill * .15 ; 
+        case bill > 200 :
+            return bill * .1;
+    }
+}
