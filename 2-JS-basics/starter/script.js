@@ -545,7 +545,7 @@ var mark  = {
             if (this.bills[i] < 100) {
                 percentage = .2;
             } else if (this.bills[i] >= 100 && this.bills[i] < 300) {
-                percentage = .15;
+                percentage = .1;
             } else { 
                 percentage = .25;
             }
@@ -557,6 +557,24 @@ var mark  = {
     }
 }
 
+function calcAverage (tips) { 
+    var sum = 0;
+    for (var i =0; i < tips.length; i++) {
+        sum = sum + tips[i];   
+    }
+    return sum / tips.length;
+}
+
 john.calcTips();
 mark.calcTips();
-console.log(john, mark)
+
+
+john.average = calcAverage(john.tips);
+mark.average = calcAverage(mark.tips);
+console.log(john, mark);
+
+if (john.average > mark.average) {
+    console.log(john.fullName + '\'s family pays higher tips, with an average of $' + john.average)
+} else if (john.average < mark.average) {
+    console.log(mark.fullName + '\'s family pays higher tips, with an average of $' + mark.average)
+}
