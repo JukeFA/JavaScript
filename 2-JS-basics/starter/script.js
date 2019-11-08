@@ -530,5 +530,33 @@ var john  = {
     }
 }
 
+var mark  = {
+    fullName: 'Mark Miller',
+    bills: [77, 475, 110, 45],
+    calcTips: function() {
+        this.tips = [];
+        this.finalValues = [];
+
+        for (var i = 0; i < this.bills.length; i++) {
+            //determine the percentage based on tipping rules
+            var percentage;
+            var bill = this.bills[i];
+
+            if (this.bills[i] < 100) {
+                percentage = .2;
+            } else if (this.bills[i] >= 100 && this.bills[i] < 300) {
+                percentage = .15;
+            } else { 
+                percentage = .25;
+            }
+
+            // add results to the corresponding arrays
+            this.tips [i] = bill * percentage;
+            this.finalValues[i] = bill + bill * percentage;
+        }
+    }
+}
+
 john.calcTips();
-console.log(john);
+mark.calcTips();
+console.log(john, mark)
