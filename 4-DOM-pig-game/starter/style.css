@@ -16,6 +16,9 @@
     text-transform: uppercase;
 }
 
+.final-score:focus { outline: none;}
+
+
 
 
 * {
