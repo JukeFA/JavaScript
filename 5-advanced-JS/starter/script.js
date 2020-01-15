@@ -126,7 +126,7 @@ console.log(rates); */
 
 // Functions returning Functions
 
-function interviewQuestion(job) {
+/* function interviewQuestion(job) {
     if (job === 'designer') {
         return function(name) {
             console.log(name + ', can you please explain what UX design is?')
@@ -147,4 +147,25 @@ var designerQuestion = interviewQuestion('designer');
 teacherQuestion('John');
 designerQuestion('John')
 
-interviewQuestion('teacher')('Mark');
+interviewQuestion('teacher')('Mark'); */
+
+
+//IIFE
+
+/* function game() {
+    var score = Math.random() * 10;
+    console.log(score >= 5);
+}
+game(); */
+
+(function () {
+    var score = Math.random() * 10;
+    console.log(score >= 5);
+})();
+
+//console.log(score);
+
+(function (goodLuck) {
+    var score = Math.random() * 10;
+    console.log(score >= 5 - goodLuck);
+})(5);
