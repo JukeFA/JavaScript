@@ -226,7 +226,7 @@ interviewTeacher('John') */
 
 // Bind, call and apply
 
-var john = {
+/* var john = {
     name:'John',
     age: 26,
     job: 'teacher',
@@ -283,3 +283,10 @@ var ages = arrayCalc(years, calculateAge);
 var fullJapan = arrayCalc(ages, isFullAge.bind(this, 20))
 console.log(ages);
 console.log(fullJapan);
+ */
+
+//pciking a random question
+function game() {
+    var score = Math.floor(Math.random() * 3);
+}
+
