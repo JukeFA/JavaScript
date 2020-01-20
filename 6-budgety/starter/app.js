@@ -1,20 +1,14 @@
+// BUDGET CONTROLLER
 var budgetController = (function() {  
 
-    var x = 23;
-
-    var add = function(a) {
-        return x + a;
-    }
-    
-    return { 
-        publicTest: function(b) {
-            console.log(add(b));
-        }
-    }
+    // Some Code
 
 })();
 
 
+
+
+// UI CONTROLLER
 var UIController = (function() {
     
     // Some Code
@@ -22,13 +16,33 @@ var UIController = (function() {
 })();
 
 
+
+
+// GLOBAL APP CONTROLLER
 var controller = (function(budgetCtrl, UICtrl) {
-    
-    var z = budgetCtrl.publicTest(5)
-    return {
-        anotherPublic: function() {
-            console.log(z)
-        }
+
+    var ctrlAddItem = function() {
+        
+        // TODO 1. Get the field input data
+
+        // TODO 2. Add the item to the budget controller
+
+        // TODO 3. Add the item to the UI
+
+        // TODO 4. Calculate the budget
+
+        // TODO 5. Display the budget on the UI
+
+        console.log('It works.')
     }
+
+    document.querySelector('.add__btn').addEventListener('click', ctrlAddItem)
+
+    document.addEventListener('keypress', function(event) {
+        if (event.keyCode === 13 || event.which === 13) {
+            ctrlAddItem();
+        }
+
+    })
 
 })(budgetController, UIController);
