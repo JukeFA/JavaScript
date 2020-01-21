@@ -91,7 +91,7 @@ var UIController = (function() {
             } else if (type === 'exp') {
                 element = DOMstrings.expensesContainer
 
-                html = '<div class="item clearfix" id="expense-%id%"><div class="item__description">%description% rent</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__percentage">21%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>'
+                html = '<div class="item clearfix" id="expense-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__percentage">21%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>'
             }
             // Replace the placeholder text with actual data
             newHtml = html.replace('%id%', obj.id);
@@ -100,6 +100,19 @@ var UIController = (function() {
 
             // Insert HTML into DOM
             document.querySelector(element).insertAdjacentHTML('beforeend', newHtml)
+        },
+
+        clearFields: function() {
+            var field, fieldsArr
+
+            fields = document.querySelectorAll(DOMstrings.inputDescription + ', ' + DOMstrings.inputValue);
+
+            fieldsArr = Array.prototype.slice.call(fields);
+
+            fieldsArr.forEach(function(current, index, array) {
+                current.value = ""
+            })
+            fieldsArr[0].focus();
         },
 
         getDOMstrings: function() {
@@ -138,9 +151,13 @@ var controller = (function(budgetCtrl, UICtrl) {
 
         // TODO 3. Add the item to the UI
         UICtrl.addListItem(newItem, input.type)
-        // TODO 4. Calculate the budget
 
-        // TODO 5. Display the budget on the UI
+        // TODO 4. Clear the fields
+        UICtrl.clearFields();
+
+        // TODO 5. Calculate the budget
+
+        // TODO 6. Display the budget on the UI
 
     }
 
