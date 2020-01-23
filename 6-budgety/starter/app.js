@@ -223,6 +223,19 @@ var controller = (function(budgetCtrl, UICtrl) {
         document.querySelector(DOM.container).addEventListener('click', ctrlDeleteItem)
     }
 
+    updatePercentages: function() {
+
+        //TODO 1. Calculate Percentages
+
+
+        //TODO 2. Read percentages from budget controller
+
+
+        //TODO 3. Update US with the new percentages
+
+
+    }
+
 
     var updateBudget = function() {
 
@@ -254,6 +267,9 @@ var controller = (function(budgetCtrl, UICtrl) {
         // TODO 5. Calculate and update Budget
         updateBudget()
 
+        // TODO 6. Calculate and update Percentages
+        updatePercentages()
+
         }
 
     }
@@ -276,6 +292,9 @@ var controller = (function(budgetCtrl, UICtrl) {
 
             //TODO 3. Update and show the budget
             updateBudget()
+
+            // TODO 4. Calculate and update Percentages
+            updatePercentages()
 
         }
     }
