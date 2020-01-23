@@ -158,6 +158,12 @@ var UIController = (function() {
             document.querySelector(element).insertAdjacentHTML('beforeend', newHtml)
         },
 
+        deleteListItem: function(selectorID) {
+            var el = document.getElementById(selectorID)
+
+            el.parentNode.removeChild(el)
+        },
+
         clearFields: function() {
             var field, fieldsArr
 
@@ -266,10 +272,10 @@ var controller = (function(budgetCtrl, UICtrl) {
             budgetCtrl.deleteItem(type, ID)
 
             //TODO 2. Delete the item from the UI
-
+            UICtrl.deleteListItem(itemID)
 
             //TODO 3. Update and show the budget
-
+            updateBudget()
 
         }
     }
