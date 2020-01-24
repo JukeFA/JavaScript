@@ -35,7 +35,7 @@
         }
         getRecipe() */
 
-        const getIDs = new Promise((resolve, reject) => {
+        /* const getIDs = new Promise((resolve, reject) => {
             setTimeout(() => {
                 resolve([523, 883, 432, 974])
             }, 1500)
@@ -50,7 +50,7 @@
             })
         }
 
-        /* getIDs
+        getIDs
         .then(IDs => {
             console.log(IDs);
             return getRecipe(IDs[2])
@@ -60,7 +60,7 @@
         })
         .catch(error => {
             console.log('error')
-        }) */
+        }) 
 
         async function getRecipesAW() {
             const IDs = await getIDs
@@ -68,7 +68,24 @@
             const recipe = await getRecipe(IDs[2])
             console.log(recipe)
         }
-        getRecipesAW()
+        getRecipesAW() */
+        function getWeather(weiod) {
+            fetch(`https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${weiod}/`)
+        
+            .then(result => {
+                console.log(result)
+                return result.json()
+            })
+            .then(data => {
+                //console.log(data)
+                const today = data.consolidated_weather[0]
+                console.log(`Temperatures in ${data.title} stay between ${today.min_temp} and ${today.max_temp}`)
+            })
+
+            .catch(error => console.log('Failed'))
+        }
+        getWeather(2487956)
+        getWeather(44418)
 
 
     </script>
