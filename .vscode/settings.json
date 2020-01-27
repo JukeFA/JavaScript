@@ -4,5 +4,6 @@
     ],
     "cSpell.ignoreWords": [
         "schmedtmann"
-    ]
+    ],
+    "git.ignoreLimitWarning": true
 }
