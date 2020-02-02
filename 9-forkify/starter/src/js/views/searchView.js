@@ -92,4 +92,3 @@ export const renderResults = (recipes, page = 1, resPerPage = 10) => {
     //Render Pagination Buttons
     renderButtons(page, recipes.length, resPerPage)
 }
-
