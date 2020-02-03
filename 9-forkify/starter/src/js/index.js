@@ -12,6 +12,7 @@ import { elements, renderLoader, clearLoader } from './views/base'
  * - Liked recipes
  */
 const state = {}
+window.state = state
 
 
 /* Search Controller */
@@ -110,7 +111,7 @@ const controlList = () => {
     })
 }
 
-// Handel Delete and update list itme Events
+// Handel Delete and update list time Events
 elements.shopping.addEventListener('click', e => {
     const id = e.target.closest('.shopping__item').dataset.itemid
 
@@ -120,6 +121,11 @@ elements.shopping.addEventListener('click', e => {
         state.list.deleteItem(id)
         // Delete from UI
         listView.deleteItem(id)
+
+        // Handle the count update
+    } else if (e.target.matches('.shopping__count-value')) {
+        const val = parseFloat(e.target.value, 10)
+        state.list.updateCount(id, val)
     }
 })
 
