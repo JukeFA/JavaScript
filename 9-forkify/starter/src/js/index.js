@@ -124,10 +124,6 @@ const controlRecipe = async () => {
 /** 
  * * Like Controller 
  **/
-//!testing
-state.likes = new Likes()
-likesView.toggleLikeMenu(state.likes.getNumLikes())
-
 const controlLike = () => {
     if (!state.likes) state.likes = new Likes()
     const currentID = state.recipe.id
@@ -158,6 +154,14 @@ const controlLike = () => {
     }
     likesView.toggleLikeMenu(state.likes.getNumLikes())
 }
+
+// Restore Likes recipes on page load
+window.addEventListener('load', () => {
+    state.likes = new Likes()
+    state.likes.readStorage()
+    likesView.toggleLikeMenu(state.likes.getNumLikes())
+    state.likes.likes.forEach(like => likesView.renderLike(like))
+})
 
 
 // Handel Delete and update list time Events
